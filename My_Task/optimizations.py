@@ -14,10 +14,17 @@ def parse_json():
         dict[counter]("quoteIds:", i['quoteIds'])
         counter+=1
 
-def Send_requests():
-    url = 'http://localhost:8000/Tag/'
+def Send_requests_quote():
+    url = 'http://localhost:8000/Quote/'
+    json_file=json.load(open('quotes.json'))
+    for i in range(len(json_file)):
+        json_file[i]['quoteId']=json_file[i]['id']
+        del(json_file[i]['id'])
+        requests.post(url,json_file[i])
+
+
+def Send_requests_author():
+    url = 'http://localhost:8000/Author/'
     json_file=json.load(open('authors.json'))
     for i in range(len(json_file)):
         requests.post(url,json_file[i])
-
-Send_requests()

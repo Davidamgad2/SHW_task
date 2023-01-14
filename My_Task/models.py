@@ -12,6 +12,4 @@ class Quote(models.Model):
     """Handling the Quote model"""
     quote=models.TextField()
     quoteId=models.IntegerField()
-    author=models.ForeignKey("Author",on_delete=models.CASCADE)
-
     
