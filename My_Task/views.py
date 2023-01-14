@@ -23,9 +23,10 @@ class QuoteViewSet(viewsets.ModelViewSet):
 @authnticate
 def get_random_quote(request):
     """Handling getting random quote"""
-
-
-    return Response({'message':'hello'},status=status.HTTP_200_OK)
+    QuoteId=models.Author.objects.values("quoteIds").order_by('?').first()['quoteIds']
+    Author=models.Author.objects.values("author").filter(quoteIds=QuoteId)[0]['author']
+    _quote=models.Quote.objects.values("quote").filter(quoteId=QuoteId)[0]['quote']
+    return Response({'quoteId':QuoteId,'author':Author,'quote':_quote},status=status.HTTP_200_OK)
 
 
 
