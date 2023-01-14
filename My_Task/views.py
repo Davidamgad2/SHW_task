@@ -51,7 +51,7 @@ def get_random_quote(request):
         data[f'{QuoteId}']+=1
         
 
-    return Response({'quoteId':QuoteId,'author':Author,'quote':_quote,"counter":data},status=status.HTTP_200_OK)
+    return Response({'quoteId':QuoteId,'author':Author,'quote':_quote},status=status.HTTP_200_OK)
 
 
 def get_current_time():
