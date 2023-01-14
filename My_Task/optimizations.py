@@ -17,8 +17,6 @@ def parse_json():
 def Send_requests():
     url = 'http://localhost:8000/Tag/'
     json_file=json.load(open('authors.json'))
-    print(json_file)
-    print(json_file[0])
     for i in range(len(json_file)):
         requests.post(url,json_file[i])
 
