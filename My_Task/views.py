@@ -37,8 +37,7 @@ def get_random_quote(request):
         writer.close()
         counter=0
         data.clear()
-
-    
+ 
     counter+=1
     
     QuoteId=models.Author.objects.values("quoteIds").order_by('?').first()['quoteIds']
@@ -53,14 +52,9 @@ def get_random_quote(request):
 
     return Response({'quoteId':QuoteId,'quote':_quote,'author':Author},status=status.HTTP_200_OK)
 
-
 def get_current_time():
     """Handling getting the time to save the file with"""
     import datetime
     Current_Time = datetime.datetime.now()
     Adjustedtime = Current_Time.strftime("%Y_%m_%d_%H_%M_%S")
     return str(Adjustedtime)
-
-
-
-
