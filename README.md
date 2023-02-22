@@ -1,6 +1,6 @@
 Thanks for this opportuinty!
 
-Kindly please note that I have ignored the venv that I'm working with
+Kindly please note that I have ignored the venv that I'm working with. I use python 3.10.6
 
 Please also note that the authorization header will be like the task that has been sent with email
 
